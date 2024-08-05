@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  background: #ffffff;
+  min-height: 100vh;
+  height: 100vh;
+}
+
+/* NAV-BAR */
+#nav-bar {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  background: #000000;
+  color: #ffffff;
+  z-index: 999;
+}
+
+/* TOOL-BAR */
+#tool-bar {
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #000000;
+  color: #ffffff;
+}
+
+/* */
+
+.main {
+  margin-left: 80px;
+  padding: 60px 80px;
+}
