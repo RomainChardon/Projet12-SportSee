@@ -1,0 +1,30 @@
+[
+  {
+    "id" : "calorieCount",
+    "name" : "Calories",
+    "unit" : "kCal",
+    "svg" : "energy.svg",
+    "color" : "#fbeaea"
+  },
+  {
+    "id" : "proteinCount",
+    "name" : "Proteines",
+    "unit" : "g",
+    "svg" : "chicken.svg",
+    "color" : "#4AB8FF1A"
+  },
+  {
+    "id" : "carbohydrateCount",
+    "name" : "Glucides",
+    "unit" : "g",
+    "svg" : "apple.svg",
+    "color" : "#F9CE231A"
+  },
+  {
+    "id" : "lipidCount",
+    "name" : "Lipides",
+    "unit" : "g",
+    "svg" : "cheeseburger.svg",
+    "color" : "#FD51811A"
+  }
+]
