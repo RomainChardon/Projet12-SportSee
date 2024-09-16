@@ -96,9 +96,12 @@ html {
 }
 
 .user-data {
+  width: 100%;
   display: flex;
   flex-direction: row;
   height: 100%;
+  gap: 60px;
+  justify-content: space-between;
 }
 
 .charts-group {

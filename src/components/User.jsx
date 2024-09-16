@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import CardCounter from "./CardCounter.jsx";
-import ActivityChart from "./ActivityChart.jsx";
-import TimeChart from "./TimeChart.jsx";
-import IntensityChart from "./IntensityChart.jsx";
-import ScoreChart from "./ScoreChart.jsx";
+import ActivityChart from "./Chart/ActivityChart/ActivityChart.jsx";
+import TimeChart from "./Chart/TimeChart.jsx";
+import IntensityChart from "./Chart/IntensityChart.jsx";
+import ScoreChart from "./Chart/ScoreChart.jsx";
 function User({userSelected}) {
     const [dataUser, setDataUser] = useState(null);
 

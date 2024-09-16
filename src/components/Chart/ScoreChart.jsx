@@ -12,24 +12,20 @@ function ScoreChart({userSelected}) {
 
     const [dataActivity, setdataActivity] = useState(null);
 
-    const data = [
-        {
-            "name": "test",
-            "value": 0.36,
-            "fill": "#83a6ed"
-        }
-    ]
-
     useEffect(() => {
         fetch(`http://192.168.1.111:3000/user/${userSelected}`, {
             method: "GET"
         })
             .then((response) => response.json())
             .then((data) => {
+                let valueData = data.data.todayScore;
+                if (valueData === undefined) {
+                    valueData = data.data.score;
+                }
                 setdataActivity([
                     {
                         "name" : "score",
-                        "value" : data.data.score * 100,
+                        "value" : valueData * 100,
                         "fill": "#83a6ed"
                     }
                 ]);
@@ -37,8 +33,6 @@ function ScoreChart({userSelected}) {
     }, [userSelected]);
 
     if (dataActivity != null) {
-        console.log(dataActivity)
-        console.log(data)
         return (
             <div className="radial-chart">
                 <ResponsiveContainer width={300} height={300}>
