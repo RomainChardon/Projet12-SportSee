@@ -1,14 +1,11 @@
 import {
     BarChart,
     Bar,
-    Rectangle,
     XAxis,
     YAxis,
     CartesianGrid,
     Tooltip,
-    Legend,
     ResponsiveContainer,
-    Text, LineChart
 } from 'recharts';
 import {useEffect, useState} from "react";
 import ActivityTooltip from "./ActivityTooltip.jsx";
@@ -23,10 +20,18 @@ function ActivityChart({userSelected}) {
         })
             .then((response) => response.json())
             .then((data) => {
-                setdataActivity(data.data.sessions);
+                {/* TODO : Format date  */}
+                const liste = data.data.sessions.map((element) => (
+                    {
+                        day : (element.day.split('-')[2]).split('0')[1],
+                        kilogram : element.kilogram,
+                        calories : element.calories
+                    }
+                ));
+
+                setdataActivity(liste);
             })
     }, [userSelected]);
-
 
     if (dataActivity != null) {
         return (
@@ -53,8 +58,8 @@ function ActivityChart({userSelected}) {
                         barSize={12}
                         barGap={8}
                     >
-                        <CartesianGrid strokeDasharray="2 3" vertical={false}/>
-                        <XAxis dataKey="day" tickLine={false} tick={{stroke:'#9B9EAC'}} dy={15} />
+                        <CartesianGrid strokeDasharray="2 3" vertical={false} film="blue"/>
+                        <XAxis dataKey={"day"} tickLine={false} tick={{stroke:'#9B9EAC'}} dy={15} />
                         <YAxis orientation="right" tickLine={false} axisLine={false} tick={{stroke:'#9B9EAC'}} dx={15}/>
                         <Tooltip content={ActivityTooltip}/>
 

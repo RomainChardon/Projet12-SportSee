@@ -1,5 +1,6 @@
 /* COLOR */
 /* CHART */
+/* BAR CHART */
 .chart-container {
   margin-bottom: 3em;
   height: 320px;
@@ -14,7 +15,6 @@
   }
 }
 
-/* BAR CHART */
 .head-chart {
   display: flex;
   justify-content: space-between;

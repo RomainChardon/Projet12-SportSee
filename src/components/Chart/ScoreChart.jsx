@@ -1,10 +1,7 @@
 import {
-    XAxis,
-    CartesianGrid,
-    Tooltip,
     Legend,
     ResponsiveContainer,
-    LineChart, Line, RadialBar, RadialBarChart, PieChart, Pie, Cell, PolarAngleAxis
+    RadialBar, RadialBarChart, PolarAngleAxis
 } from 'recharts';
 import {useEffect, useState} from "react";
 
@@ -42,8 +39,8 @@ function ScoreChart({userSelected}) {
                         innerRadius="80%"
                         outerRadius="100%"
                         data={dataActivity}
-                        startAngle={180}
-                        endAngle={0}
+                        startAngle={230}
+                        endAngle={-130}
                     >
                         <PolarAngleAxis type="number" domain={[1, 100]} />
                         <RadialBar minAngle={15} label={{ fill: '#666', position: 'insideStart' }} background clockWise={true} dataKey='value' />
