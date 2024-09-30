@@ -1,56 +1,43 @@
 import {
     Legend,
     ResponsiveContainer,
-    RadialBar, RadialBarChart, PolarAngleAxis
+    RadialBar, RadialBarChart, PolarAngleAxis, XAxis, YAxis
 } from 'recharts';
 import {useEffect, useState} from "react";
 
-function ScoreChart({userSelected}) {
+function ScoreChart({dataUser}) {
 
-    const [dataActivity, setdataActivity] = useState(null);
-
-    useEffect(() => {
-        fetch(`http://192.168.1.111:3000/user/${userSelected}`, {
-            method: "GET"
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                let valueData = data.data.todayScore;
-                if (valueData === undefined) {
-                    valueData = data.data.score;
-                }
-                setdataActivity([
-                    {
-                        "name" : "score",
-                        "value" : valueData * 100,
-                        "fill": "#83a6ed"
-                    }
-                ]);
-            })
-    }, [userSelected]);
-
-    if (dataActivity != null) {
+    if (dataUser != null) {
         return (
-            <div className="radial-chart">
+            <div className="chart-container">
+                <div className="head-chart">
+                    <h3 className="title-chart">
+                        Score
+                    </h3>
+                </div>
+
                 <ResponsiveContainer width={300} height={300}>
                     <RadialBarChart
                         width={300}
                         height={250}
-                        innerRadius="80%"
+                        innerRadius="85%"
                         outerRadius="100%"
-                        data={dataActivity}
+                        data={dataUser.getScore()}
                         startAngle={230}
                         endAngle={-130}
                     >
-                        <PolarAngleAxis type="number" domain={[1, 100]} />
-                        <RadialBar minAngle={15} label={{ fill: '#666', position: 'insideStart' }} background clockWise={true} dataKey='value' />
-                        <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" />
+                        <PolarAngleAxis type="number" domain={[1, 100]} tick={false}/>
+                        <RadialBar minAngle={15} clockWise={true} dataKey="value" fill="#ff0000" background cornerRadius={10} />
                     </RadialBarChart>
                 </ResponsiveContainer>
+                <div className="score-title">
+                    <p>{dataUser.getScore()[0].value}%</p>
+                    <p>de votre objectif</p>
+                </div>
             </div>
         )
     } else {
-        <div className="bar-chart"> <p>proute</p></div>
+        <div className="bar-chart"><p>Pas de donnée</p></div>
     }
 
 }

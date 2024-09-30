@@ -1,12 +1,13 @@
-import {useState} from "react";
-import User from "../components/User.jsx";
+import ShowUser from "../components/ShowUser.jsx";
+import {useParams} from "react-router-dom";
 
 function Home() {
-    const [userSelected, setUserSelected] = useState(12);
-
+    const { id } = useParams();
+    /* TODO: classe de modélisation */
     return (
-        <User userSelected={userSelected} />
+        <ShowUser userSelected={id} />
     )
+
 }
 
 export default Home;

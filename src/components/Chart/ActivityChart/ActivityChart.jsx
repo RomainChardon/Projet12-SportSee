@@ -10,30 +10,9 @@ import {
 import {useEffect, useState} from "react";
 import ActivityTooltip from "./ActivityTooltip.jsx";
 
-function ActivityChart({userSelected}) {
+function ActivityChart({dataUser}) {
 
-    const [dataActivity, setdataActivity] = useState(null);
-
-    useEffect(() => {
-        fetch(`http://192.168.1.111:3000/user/${userSelected}/activity`, {
-            method: "GET"
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                {/* TODO : Format date  */}
-                const liste = data.data.sessions.map((element) => (
-                    {
-                        day : (element.day.split('-')[2]).split('0')[1],
-                        kilogram : element.kilogram,
-                        calories : element.calories
-                    }
-                ));
-
-                setdataActivity(liste);
-            })
-    }, [userSelected]);
-
-    if (dataActivity != null) {
+    if (dataUser != null) {
         return (
             <div className="chart-container">
                 <div className="head-chart">
@@ -54,7 +33,7 @@ function ActivityChart({userSelected}) {
                         width={500}
                         height={200}
                         margin={{ top: 40, right: 30, bottom: 20, left: 30 }}
-                        data={dataActivity}
+                        data={dataUser.getFormattedActivity()}
                         barSize={12}
                         barGap={8}
                     >

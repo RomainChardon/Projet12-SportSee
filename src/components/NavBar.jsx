@@ -1,8 +1,13 @@
+import {Link} from "react-router-dom";
+
 function NavBar() {
+
     return (
         <div id="nav-bar">
             <div className="nav">
-                <img src="/img/logo.png" className="logo" alt="Logo de SportSee"/>
+                <Link to={`/`}>
+                    <img src="/img/logo.png" className="logo" alt="Logo de SportSee"/>
+                </Link>
                 <p>Acceuil</p>
                 <p>Profil</p>
                 <p>Reglage</p>
