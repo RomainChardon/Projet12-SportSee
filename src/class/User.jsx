@@ -15,7 +15,7 @@ class User {
 
     getFormattedActivity() {
         return this.activity.map((element) => ({
-            day: element.day,
+            day: element.day.split('-')[2].split('0')[1],
             kilogram: element.kilogram,
             calories: element.calories,
         }));

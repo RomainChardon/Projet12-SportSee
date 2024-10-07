@@ -3,6 +3,22 @@ $bg-color: #fbfbfb;
 
 /* CHART */
 
+.smallchart {
+  border-radius: 5px;
+  background-color: $bg-color;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  padding: 25px;
+
+  position: relative;
+  aspect-ratio: 1/1;
+  max-height: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 1200px) {
+    height: 230px;
+  }
+}
+
 
 
 /* BAR CHART */
@@ -10,14 +26,16 @@ $bg-color: #fbfbfb;
 .chart-container {
   position: relative;
   margin-bottom: 3em;
-  height: 320px;
+  max-height: 260px;
   border-radius: 5px;
   background-color: $bg-color;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   padding: 25px;
 
-  @media (max-width: 1025px) {
-    padding-left: 0;
+  @media (max-width: 1200px) {
+    padding: 15px;
+    margin-bottom: 1.5rem;
+    width: 700px;
   }
 }
 
@@ -80,9 +98,9 @@ $bg-color: #fbfbfb;
 .score-title {
   position: absolute;
   left: 50%;
-  top: 53%;
+  top: 56%;
   transform: translate(-50%, -50%);
-  font-size: 15px;
+
   line-height: 26px;
   font-weight: 700;
   text-align: center;
@@ -93,17 +111,40 @@ $bg-color: #fbfbfb;
     font-weight: 700;
     font-size: 26px;
   }
+
+  @media (max-width: 1200px) {
+    line-height: 12px;
+    font-size: 11px;
+    top: 58%;
+    p {
+      font-size: 12px;
+    }
+  }
 }
 
 /* TIME */
 
 .time-container {
   background: #ff0000;
+  padding: 0;
+  @media (max-width: 1200px) {
+    line-height: 12px;
+    font-size: 11px;
+    p {
+      font-size: 12px;
+    }
+  }
+
 }
 
 .title-time {
   line-height: 24px;
   color: rgba(255, 255, 255, 0.7);
+
+  @media (max-width: 1200px) {
+    line-height: 16px;
+    font-size: 12px;
+  }
 }
 
 .time-tooltip {
@@ -128,8 +169,6 @@ $bg-color: #fbfbfb;
 .intensity-container {
   background: #282D30;
   padding: 0;
-  height: 370px;
-  width: 370px;
 }
 
 

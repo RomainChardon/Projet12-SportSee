@@ -21,8 +21,6 @@ function ShowUser({userSelected}) {
 
             let user = new User(dataInfo, dataActivity, dataIntensity, dataAverage);
             setDataUser(user);
-
-            console.log(user.getTranslateKind("speed"))
         };
 
         if (userSelected) {

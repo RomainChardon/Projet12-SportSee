@@ -9,17 +9,17 @@ function ScoreChart({dataUser}) {
 
     if (dataUser != null) {
         return (
-            <div className="chart-container">
+            <div className="smallchart">
                 <div className="head-chart">
                     <h3 className="title-chart">
                         Score
                     </h3>
                 </div>
 
-                <ResponsiveContainer width={300} height={300}>
+                <ResponsiveContainer width="100%" height="100%">
                     <RadialBarChart
-                        width={300}
-                        height={250}
+                        width="100%"
+                        height="100%"
                         innerRadius="85%"
                         outerRadius="100%"
                         data={dataUser.getScore()}

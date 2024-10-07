@@ -7,7 +7,6 @@ import {
     Tooltip,
     ResponsiveContainer,
 } from 'recharts';
-import {useEffect, useState} from "react";
 import ActivityTooltip from "./ActivityTooltip.jsx";
 
 function ActivityChart({dataUser}) {
@@ -28,10 +27,10 @@ function ActivityChart({dataUser}) {
                         </div>
                     </div>
                 </div>
-                <ResponsiveContainer width="100%" height={300}>
+                <ResponsiveContainer width="100%" height="100%">
                     <BarChart
-                        width={500}
-                        height={200}
+                        width="100%"
+                        height="100%"
                         margin={{ top: 40, right: 30, bottom: 20, left: 30 }}
                         data={dataUser.getFormattedActivity()}
                         barSize={12}

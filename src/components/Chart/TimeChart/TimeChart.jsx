@@ -1,44 +1,40 @@
 import {
     XAxis,
-    CartesianGrid,
     ResponsiveContainer,
-    LineChart, Line, YAxis, Tooltip, ReferenceArea, Rectangle
+    LineChart, Line, YAxis, Tooltip, Rectangle
 } from 'recharts';
-import {useEffect, useState} from "react";
 import TimeTooltip from "./TimeTooltip.jsx";
 
 function TimeChart({dataUser}) {
     const CustomCursor = (props) => {
         const { points, width, height, stroke } = props;
         const { x, y } = points[0];
-        const { x1, y1 } = points[1];
         return (
             <Rectangle
-                fill="#e60000"
-                stroke="#e60000"
+                width={1000}
+                height={1000}
                 x={x}
-                y={y}
-                width={width}
-                height={350}
+                y={y - 100}
+                style={{background: 'red', opacity: 0.1, zIndex: 9, position: "absolute"}}
             />
         );
     };
 
     if (dataUser != null) {
         return (
-            <div className="time-container chart-container">
-                <div className="head-chart">
+            <div className="time-container smallchart">
+                <div className="head-chart" style={{position: "absolute", left: "10px"}}>
                     <h3 className="title-time">
                         Durée moyenne des sessions
                     </h3>
                 </div>
-                <ResponsiveContainer width={300} height={300}>
+                <ResponsiveContainer width="100%" height="100%">
                     <LineChart
-                        width={300}
-                        height={300}
+                        width="100%"
+                        height="100%"
                         data={dataUser.getFormattedAverage()}
                     >
-                        <XAxis dataKey="day" type="category" tickLine={false} axisLine={false} tick={{fontSize: 14, stroke:'rgba(255, 255, 255, 0.7)'}} dy={15}/>
+                        <XAxis dataKey="day" type="category" tickLine={false} axisLine={false} tick={{fontSize: 14, stroke:'rgba(255, 255, 255, 0.7)'}} dy={0}/>
                         <YAxis dataKey="sessionLength" hide={true}/>
                         <Tooltip content={<TimeTooltip/>} cursor={<CustomCursor />}/>
                         <Line type="monotone" padding={{ left: 10 }} dataKey="sessionLength" stroke="rgba(255, 255, 255, 0.7)" strokeWidth={2} dot={false} activeDot={{ r: 4, strokeWidth: 4, stroke:'white' }}/>
