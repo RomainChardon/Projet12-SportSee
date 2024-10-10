@@ -11,11 +11,12 @@ $bg-color: #fbfbfb;
 
   position: relative;
   aspect-ratio: 1/1;
-  max-height: 100%;
+  max-height: 94%;
   box-sizing: border-box;
 
   @media (max-width: 1200px) {
     height: 230px;
+    max-height: 100%;
   }
 }
 

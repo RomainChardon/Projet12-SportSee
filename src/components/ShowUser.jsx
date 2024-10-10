@@ -4,28 +4,21 @@ import ActivityChart from "./Chart/ActivityChart/ActivityChart.jsx";
 import TimeChart from "./Chart/TimeChart/TimeChart.jsx";
 import IntensityChart from "./Chart/IntensityChart.jsx";
 import ScoreChart from "./Chart/ScoreChart.jsx";
-import {fetchUser} from "../services/fetchUser.jsx";
-import {fetchUserActivity} from "../services/fetchUserActivity.jsx";
-import {fetchUserIntensity} from "../services/fetchUserIntensity.jsx";
-import {fetchUserAverage} from "../services/fetchUserAverage.jsx";
-import User from "../class/User.jsx";
+import {makeUser} from "../services/makeUser.jsx";
+import {makeMockedUser} from "../services/makeMockedUser.jsx";
 function ShowUser({userSelected}) {
     const [dataUser, setDataUser] = useState(null);
 
     useEffect(() => {
-        const getData = async () => {
-            const dataInfo = await fetchUser(userSelected);
-            const dataActivity = await fetchUserActivity(userSelected);
-            const dataIntensity = await fetchUserIntensity(userSelected);
-            const dataAverage = await fetchUserAverage(userSelected);
+        // for use API
+        // makeUser(userSelected).then((data) => {
+        //     setDataUser(data);
+        // });
 
-            let user = new User(dataInfo, dataActivity, dataIntensity, dataAverage);
-            setDataUser(user);
-        };
-
-        if (userSelected) {
-            getData();
-        }
+        // for use MOCK API
+        makeMockedUser(userSelected).then((data) => {
+            setDataUser(data);
+        });
     }, [userSelected]);
 
     if (dataUser != null) {
