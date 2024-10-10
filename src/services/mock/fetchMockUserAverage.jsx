@@ -1,3 +1,7 @@
+/**
+ * @returns {object} Response
+ * @param {string} userSelected
+ */
 export const fetchMockUserAverage = async (userSelected) => {
     try {
         const response = await fetch(`/mock/${userSelected}/userAverage.json`, {

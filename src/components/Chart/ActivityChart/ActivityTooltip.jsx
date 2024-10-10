@@ -1,3 +1,8 @@
+/**
+ * @return {JSX}
+ *  @param {boolean} active
+ *  @param {object} payload
+ */
 function ActivityTooltip({active, payload}) {
     if (active){
         return (

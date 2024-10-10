@@ -3,6 +3,10 @@ import {
     RadarChart, PolarGrid, PolarAngleAxis, Radar
 } from 'recharts';
 
+/**
+ * @return {JSX}
+ *  @param {object} dataUser
+ */
 function IntensityChart({dataUser}) {
     if (dataUser != null) {
         return (

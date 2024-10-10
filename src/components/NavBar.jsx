@@ -1,5 +1,8 @@
 import {Link} from "react-router-dom";
 
+/**
+ * @return {JSX}
+ */
 function NavBar() {
 
     return (

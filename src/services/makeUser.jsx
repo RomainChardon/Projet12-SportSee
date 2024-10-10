@@ -4,6 +4,10 @@ import {fetchUserIntensity} from "./api/fetchUserIntensity.jsx";
 import {fetchUserAverage} from "./api/fetchUserAverage.jsx";
 import User from "../class/User.jsx";
 
+/**
+ * @returns {object} Response
+ * @param {string} userSelected
+ */
 export const makeUser = async (userSelected) => {
     const dataInfo = await fetchUser(userSelected);
     const dataActivity = await fetchUserActivity(userSelected);

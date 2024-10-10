@@ -1,12 +1,13 @@
 import {
-    Legend,
     ResponsiveContainer,
-    RadialBar, RadialBarChart, PolarAngleAxis, XAxis, YAxis
+    RadialBar, RadialBarChart, PolarAngleAxis
 } from 'recharts';
-import {useEffect, useState} from "react";
 
+/**
+ * @return {JSX}
+ *  @param {object} dataUser
+ */
 function ScoreChart({dataUser}) {
-
     if (dataUser != null) {
         return (
             <div className="smallchart">

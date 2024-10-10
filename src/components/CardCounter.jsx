@@ -1,5 +1,10 @@
 import json from "../assets/json/userCounter.json"
 
+/**
+ * @return {JSX}
+ *  @param {string} title
+ *  @param {number} value
+ */
 function CardCounter({title, value}) {
 
     const moreData = json.find((element) => element.id === title);

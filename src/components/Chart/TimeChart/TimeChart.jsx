@@ -5,6 +5,10 @@ import {
 } from 'recharts';
 import TimeTooltip from "./TimeTooltip.jsx";
 
+/**
+ * @return {JSX}
+ *  @param {object} dataUser
+ */
 function TimeChart({dataUser}) {
     const CustomCursor = (props) => {
         const { points, width, height, stroke } = props;

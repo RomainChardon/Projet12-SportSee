@@ -6,6 +6,11 @@ import IntensityChart from "./Chart/IntensityChart.jsx";
 import ScoreChart from "./Chart/ScoreChart.jsx";
 import {makeUser} from "../services/makeUser.jsx";
 import {makeMockedUser} from "../services/makeMockedUser.jsx";
+
+/**
+ * @return {JSX}
+ *  @param {string} userSelected
+ */
 function ShowUser({userSelected}) {
     const [dataUser, setDataUser] = useState(null);
 

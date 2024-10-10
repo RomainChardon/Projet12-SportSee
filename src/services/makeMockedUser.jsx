@@ -4,6 +4,10 @@ import {fetchMockUserActivity} from "./mock/fetchMockUserActivity.jsx";
 import {fetchMockUserAverage} from "./mock/fetchMockUserAverage.jsx";
 import {fetchMockUserIntensity} from "./mock/fetchMockUserIntensity.jsx";
 
+/**
+ * @returns {object} Response
+ * @param {string} userSelected
+ */
 export const makeMockedUser = async (userSelected) => {
     const dataInfo = await fetchMockUser(userSelected);
     const dataActivity = await fetchMockUserActivity(userSelected);

@@ -1,3 +1,8 @@
+/**
+ * @return {JSX}
+ *  @param {boolean} active
+ *  @param {object} payload
+ */
 function TimeTooltip({active, payload}) {
     if (active){
         return (

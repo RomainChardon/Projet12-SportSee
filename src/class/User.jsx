@@ -13,6 +13,9 @@ class User {
         this.average = dataAverage;
     }
 
+    /**
+     * @return {array}
+     */
     getFormattedActivity() {
         return this.activity.map((element) => ({
             day: element.day.split('-')[2].split('0')[1],
@@ -21,6 +24,9 @@ class User {
         }));
     }
 
+    /**
+     * @return {array}
+     */
     getFormattedIntensity() {
         return this.intensity.map((element) => ({
             subject: this.getTranslateKind(this.kind[element.kind]),
@@ -29,6 +35,9 @@ class User {
         }));
     }
 
+    /**
+     * @return {array}
+     */
     getScore() {
         return [{
             name : "score",
@@ -37,6 +46,9 @@ class User {
         }]
     }
 
+    /**
+     * @return {array}
+     */
     getFormattedAverage() {
         return this.average.map((data) => {
             switch (data.day) {
@@ -60,6 +72,9 @@ class User {
         });
     }
 
+    /**
+     * @return {array}
+     */
     getTranslateKind(kingChoice) {
         switch (kingChoice) {
             case "cardio":

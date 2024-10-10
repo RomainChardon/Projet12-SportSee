@@ -1,3 +1,6 @@
+/**
+ * @return {JSX}
+ */
 function ToolBar() {
     return (
         <div id="tool-bar">

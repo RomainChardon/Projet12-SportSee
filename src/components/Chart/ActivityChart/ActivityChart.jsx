@@ -9,6 +9,10 @@ import {
 } from 'recharts';
 import ActivityTooltip from "./ActivityTooltip.jsx";
 
+/**
+ * @return {JSX}
+ *  @param {object} dataUser
+ */
 function ActivityChart({dataUser}) {
 
     if (dataUser != null) {
